@@ -15,9 +15,9 @@ public class Main {
     }
 
     double hitRatioMean = getMean(hitRatioSamples);
-    double hitRatioHalfInterval =  0.96*getStdDev(hitRatioSamples)/Math.sqrt(samplesize);
+    double hitRatioHalfInterval =  1.96*getStdDev(hitRatioSamples)/Math.sqrt(samplesize);
     double missRateMean = getMean(missRateSamples);
-    double missRateHalfInterval =  0.96*getStdDev(missRateSamples)/Math.sqrt(samplesize);
+    double missRateHalfInterval =  1.96*getStdDev(missRateSamples)/Math.sqrt(samplesize);
 
     System.out.println("Hit Ratio mean: " + hitRatioMean);
     System.out.println("Hit Ratio confidence interval: [" +
@@ -48,7 +48,7 @@ public class Main {
   }
 
   public static void main(String[] args) {
-    getConfidenceInterval(10, 1000, "fifo", 1000, 10000);
+    getConfidenceInterval(2, 3, "fifo", 10000, 10000);
   }
 
 }
